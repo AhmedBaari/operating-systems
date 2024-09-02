@@ -29,16 +29,17 @@ int main()
         printf("error in shmat");
         return 1;
     }
-    s = shm;
     // printf("Enter value");
-    for (c = 'a'; c < 'z'; c = c + 2)
-    {
-        *s = c;
-        s++;
-    }
-    *s = '\0';
-    while (*shm != '*')
-        sleep(1);
+    do {
+        s = shm;
+        for (c = 'a'; c < 'z'; c = c + 2)
+        {
+            *s = c;
+            s++;
+        }
+        //while (*shm != '*')
+        //    sleep(1);
+    } while (1);
 
     exit(0);
 }

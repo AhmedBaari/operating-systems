@@ -6,10 +6,12 @@
     #define SHMSZ 27
     main()
     {
+        //sleep(NULL);
         int shmid, k;
         key_t key;
         char *shm, *s;
         printf("Enter Key to See Data: ");
+
         scanf("%d", &key);
 
         if ((shmid = shmget(key, SHMSZ, 0666)) < 0)
@@ -26,5 +28,6 @@
             putchar(*s);
         putchar('\n');
         *shm = '*';
+        
         exit(0);
     }
